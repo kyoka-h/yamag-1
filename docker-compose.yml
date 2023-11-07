@@ -1,7 +1,7 @@
 version: '3'
 services:
   app:
-    build: .
+    image: kyoka820/yamag:master
     restart: always
     links:
       - db
