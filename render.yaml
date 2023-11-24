@@ -2,9 +2,9 @@ services:
   - type: cron
     name: yamag-blueprint-note
     runtime: node
-    schedule: "5 5 * * *"
+    schedule: "5 15 * * *"
     region: singapore
-    repo: https://github.com/kyoka820/yamag.git
+    repo: https://github.com/kyoka820/yamag-1.git
     buildCommand: "bash build-script.sh"
     startCommand: "pnpm start"
     envVars:
@@ -16,9 +16,9 @@ services:
   - type: cron
     name: yamag-blueprint-remind
     runtime: node
-    schedule: "2 5 * * *"
+    schedule: "2 15 * * *"
     region: singapore
-    repo: https://github.com/kyoka820/yamag.git
+    repo: https://github.com/kyoka820/yamag-1.git
     buildCommand: "bash build-script.sh"
     startCommand: "pnpm run remind"
     envVars:
@@ -27,7 +27,7 @@ services:
     name: yamag-blueprint-mention
     runtime: node
     region: singapore
-    repo: https://github.com/kyoka820/yamag.git
+    repo: https://github.com/kyoka820/yamag-1.git
     buildCommand: "bash build-script.sh"
     startCommand: "pnpm run mentions"
     envVars:
