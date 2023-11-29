@@ -32,7 +32,7 @@ export const mention = {
 }
 
 export const server:Server = {
-  origin: process.env?.SERVER_ORIGIN || "https://misskey.secinet.jp/",
+  origin: process.env?.SERVER_ORIGIN || "https://misskey.secinet.jp",
   credential: process.env.SERVER_TOKEN || '2RhTz83hWijM7OzMDjrj0EP76x5Dn07j'
 }
 
