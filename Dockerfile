@@ -5,6 +5,12 @@ WORKDIR /
 # Install pnpm
 RUN npm i -g pnpm
 
+# Install cron
+RUN apt-get update && apt-get -y install cron
+
+# Install vi
+RUN apt-get update && apt-get -y install vim
+
 # Files required by pnpm install
 COPY package.json pnpm-lock.yaml ./
 
