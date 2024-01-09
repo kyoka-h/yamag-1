@@ -1,0 +1,3 @@
+34 15 * * * pnpm run mentions
+3 16 * * * pnpm run remind
+5 16 * * * pnpm start

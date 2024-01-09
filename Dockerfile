@@ -1,12 +1,15 @@
 FROM node:18.17.0-bullseye
 
-WORKDIR /
+WORKDIR /root/
 
 # Install pnpm
 RUN npm i -g pnpm
 
-# Install cron
-RUN apt-get update && apt-get -y install cron
+# Change TZ
+RUN cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+
+# Install BusyBox crond
+RUN apt-get update && apt-get -y install busybox-static
 
 # Install vi
 RUN apt-get update && apt-get -y install vim
@@ -24,4 +27,6 @@ COPY . .
 
 RUN pnpm build
 
-CMD [ "pnpm", "run", "mentions" ]
+COPY yamag-cron /var/spool/cron/crontabs/root
+
+CMD ["busybox", "crond", "-f", "-L", "/dev/stderr"]

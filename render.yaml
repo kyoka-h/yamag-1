@@ -2,7 +2,7 @@ services:
   - type: cron
     name: yamag-blueprint-note
     runtime: node
-    schedule: "5 15 * * *"
+    schedule: "5 3 * * *"
     region: singapore
     repo: https://github.com/kyoka820/yamag-1.git
     buildCommand: "bash build-script.sh"
@@ -16,7 +16,7 @@ services:
   - type: cron
     name: yamag-blueprint-remind
     runtime: node
-    schedule: "2 15 * * *"
+    schedule: "2 3 * * *"
     region: singapore
     repo: https://github.com/kyoka820/yamag-1.git
     buildCommand: "bash build-script.sh"
